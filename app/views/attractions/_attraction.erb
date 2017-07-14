@@ -1,0 +1,14 @@
+<div class="well">
+
+    <h1><%= link_to attraction.name, attraction_path(attraction) %></h1>
+    <p>Ticket Cost: <%= attraction.tickets %> </p>
+    <p>Nausea Rating: <%= attraction.nausea_rating %> </p>
+    <p>Happiness Rating: <%= attraction.happiness_rating %> </p>
+    <p>Minimum Height: <%= attraction.min_height %> </p>
+
+  <% if current_user.admin %>
+      <p><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></p>
+  <% else %>
+    <p><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></p>
+  <% end %>
+</div>

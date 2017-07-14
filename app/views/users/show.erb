@@ -1,0 +1,40 @@
+<div class="well">
+  <% if params[:message] %>
+    <%= params[:message] %>
+  <% end %>
+  <div class="page-header">
+    <h1><%= @user.name %></h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <tr>
+          <th>Stat</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Mood:</td>
+          <td><%= @user.mood %></td>
+        </tr>
+        <tr>
+          <td>Tickets:</td>
+          <td><%= @user.tickets %></td>
+        </tr>
+        <tr>
+          <td>Height:</td>
+          <td><%= @user.height %></td>
+        </tr>
+        <tr>
+          <td>Nausea:</td>
+          <td><%= @user.nausea %></td>
+        </tr>
+        <tr>
+          <% if @user.admin %>
+            <td>ADMIN</td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
